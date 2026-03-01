@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <BODY>
+
+    <HEADER>
+        <H1>
+            COMPUTER NETWORK MODELS
+        </H1>
+
+        <H3>
+            By Briones, Que, Sosa, & Torres
+        </H3>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="page1.html">Page 1</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="page2.html">Page 2</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="page3.html">Page 3</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+    </HEADER>
+
+    <SECTION>
+        <H1>
+                There are two common network models to represent the flow of data Communication: The OSI Model and the TCP/IP MODEL  
+            </H1>
+
+            <IMG SRC = "Images/both_models.png">
+
+            <H2>
+                The above table shows how the layers of both models relate to each other. A summary of how each model may differ is given below.
+            </H2>
+
+            <TABLE>
+                <TR>
+                    <TH>OSI MODEL</TH>
+                    <TH>TCP/IP MODEL</TH>
+                </TR>
+                <TR>
+                    <TD>7 Layers</TD>
+                    <TD>4 Layers</TD>
+                </TR>
+                <TR>
+                    <TD>No specified protocols used</TD>
+                    <TD>Uses specified protocols such as TCP, UDP, IP, etc.</TD>
+                </TR>
+                <TR>
+                    <TD>Developed by ISO for standardization, more theoretical</TD>
+                    <TD>Developed by DoD for Internet use, more practical</TD>
+                </TR>
+                <TR>
+                    <TD>Has a separate presentation and session layer</TD>
+                    <TD>Does not have a separate presentation and separate layer</TD>
+                </TR>
+            </TABLE>    
+        
+        <!-- Interactive packet visualization part -->
+        <MAIN> 
+            <section id="visualizationSection">
+                <h2>
+                    Network Data Flow Visualization
+                </h2>
+                
+                <!-- Controls for Visualizer -->
+                <div id="visualizationControls">
+                    <!-- Select model (OSI or TCP/IP) -->
+                    <div class="model-toggle">
+                        <button class="btn btn-active" id="btn-osi" onclick="setModel('osi')">OSI (7-Layer)</button>
+                        <button class="btn" id="btn-tcpip" onclick="setModel('tcpip')">TCP/IP (4-Layer)</button>
+                    </div>
+
+                    <!-- Select mode (Auto/Manual) -->
+                    <div class="mode-toggle">
+                        <button class="btn btn-active" id="btn-manual" onclick="setMode('manual')">Manual</button>
+                        <button class="btn" id="btn-auto" onclick="setMode('auto')">Auto</button>
+                    </div>
+
+                    <!-- Playback options -->
+                    <button class="btn" id="playBtn" onclick="playVisualization()">Play</button>
+                    <button class="btn" id="pauseBtn" onclick="pauseVisualization()" disabled>Pause</button>
+                    <button class="btn" id="resetBtn" onclick="resetVisualization()">Reset</button>
+                </div>
+
+                <!-- Displays the layers of the specified model -->
+                <div id="hosts">
+                    <div class="host" id="sender"></div>
+                    <div id="channel">
+                        <div id="wire">
+                            <div id="packet"></div>
+                        </div>
+                        <div id="wireLabel">MEDIUM</div>
+                    </div>
+                    <div class="host" id="receiver"></div>
+                </div>
+
+                <!-- While on manual mode, the explanation section is updated for what the current layer does -->
+                <div id="explanation">
+                    <span class="explanation-label">Step Explanation</span>
+                    <span id="explanationText">Lorem ipsum.</span>
+                </div>
+
+                <!-- A button to go to the next step (only visible when set to Manual) -->
+                <button id="nxtBtn" onclick="manualStep()">Next Step</button>
+                <div id="completeVisualization">Transmission complete. Data successfully sent from Host A to Host B</div>
+            </section>
+        </MAIN>
+        <script src="app.js"></script>
+    </SECTION>
+
+    <FOOTER>
+        <div class="container text-center">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                <div class="col">
+                    <img src="Signatures/Briones.jpg" class="img-fluid" alt="Briones">
+                </div>
+                <div class="col">
+                    <img src="Signatures/Que.png" class="img-fluid" alt="Que">
+                </div>
+                <div class="col">
+                    <img src="Signatures/Sosa.png" class="img-fluid" alt="Sosa">
+                </div>
+                <div class="col">
+                    <img src="Signatures/Torres.png" class="img-fluid" alt="Torres">
+                </div>
+            </div>
+        </div>
+ 
+        
+        <H4>
+            We (Briones, Que, Sosa, Torres) certify that no AI tools were used in the design, coding, debugging, or writing of this project
+        </H4>
+        
+    </FOOTER>
+
+    <script src="app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+  </body>
+</html>

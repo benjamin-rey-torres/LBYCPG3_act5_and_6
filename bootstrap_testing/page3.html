@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <BODY>
+
+    <HEADER>
+        <H1>
+            COMPUTER NETWORK MODELS
+        </H1>
+
+        <H3>
+            By Briones, Que, Sosa, & Torres
+        </H3>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="page1.html">Page 1</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="page2.html">Page 2</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="page3.html">Page 3</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+    </HEADER>
+
+    <section id="quizSection">
+    <header>
+        <h1>OSI Model Quiz</h1>
+    </header>
+        <p>This is a short quiz to test your knowledge on the OSI model. Click the button below when you're ready to start.</p>
+            <button class="btn" id="startQuizBtn">Start OSI Quiz</button>
+
+            <!--check identification function is fed into check answers function button to calculate overall score-->
+            <div id="quizArea" style="display:none;">
+
+                <SECTION id="identificationSection">
+                    <H2>
+                        Identification Quiz
+                    </H2>
+                    <H3>
+                        What does OSI stand for?
+                    </H3>
+                    <label for="Answer1">Answer:</label>
+                    <input type="text" id="Answer1" name="Answer1"><br><br>
+                    
+                    <H3>
+                        What does DARPA stand for?
+                    </H3>
+                    <label for="Answer2">Answer:</label>
+                    <input type="text" id="Answer2" name="Answer2"><br><br>
+                    
+                    <H3>
+                        What does ISO stand for?
+                    </H3>
+                    <label for="Answer3">Answer:</label>
+                    <input type="text" id="Answer3" name="Answer3"><br><br>
+                    
+                    <button id="checkIdentification" onclick="checkIdentification()">Check Identification Answers</button>
+                    
+                </SECTION>
+                <h2>Match the Layer and Its Definition</h2>
+
+                <div class="quiz-container">
+
+                    <div class="layers">
+                        <h3>Layers</h3>
+
+                        <div id="layer-application" draggable="true" class="drag-layer" data-id="application">Application</div>
+                        <div id="layer-presentation" draggable="true" class="drag-layer" data-id="presentation">Presentation</div>
+                        <div id="layer-session" draggable="true" class="drag-layer" data-id="session">Session</div>
+                        <div id="layer-transport" draggable="true" class="drag-layer" data-id="transport">Transport</div>
+                        <div id="layer-network" draggable="true" class="drag-layer" data-id="network">Network</div>
+                        <div id="layer-datalink" draggable="true" class="drag-layer" data-id="datalink">Data Link</div>
+                        <div id="layer-physical" draggable="true" class="drag-layer" data-id="physical">Physical</div>
+                    </div>
+
+                    <div class="definitions">
+                        <h3>Definitions</h3>
+
+                        <div id="def-application" draggable="true" class="drag-def" data-id="application">Creates the data</div>
+                        <div id="def-presentation" draggable="true" class="drag-def" data-id="presentation">Formats and encrypts data</div>
+                        <div id="def-session" draggable="true" class="drag-def" data-id="session">Manages sessions</div>
+                        <div id="def-transport" draggable="true" class="drag-def" data-id="transport">Breaks into segments</div>
+                        <div id="def-network" draggable="true" class="drag-def" data-id="network">Routes packets</div>
+                        <div id="def-datalink" draggable="true" class="drag-def" data-id="datalink">Creates frames</div>
+                        <div id="def-physical" draggable="true" class="drag-def" data-id="physical">Transmits bits</div>
+                    </div>
+
+                </div>
+
+                <h3>Match Here:</h3>
+
+                <div class="match-area">
+
+                    <div class="match-row" data-id="application">
+                        <div class="drop-layer"></div>
+                        <div class="drop-def"></div>
+                    </div>
+
+                    <div class="match-row" data-id="presentation">
+                        <div class="drop-layer"></div>
+                        <div class="drop-def"></div>
+                    </div>
+
+                    <div class="match-row" data-id="session">
+                        <div class="drop-layer"></div>
+                        <div class="drop-def"></div>
+                    </div>
+
+                    <div class="match-row" data-id="transport">
+                        <div class="drop-layer"></div>
+                        <div class="drop-def"></div>
+                    </div>
+
+                    <div class="match-row" data-id="network">
+                        <div class="drop-layer"></div>
+                        <div class="drop-def"></div>
+                    </div>
+
+                    <div class="match-row" data-id="datalink">
+                        <div class="drop-layer"></div>
+                        <div class="drop-def"></div>
+                    </div>
+
+                    <div class="match-row" data-id="physical">
+                        <div class="drop-layer"></div>
+                        <div class="drop-def"></div>
+                    </div>
+
+                </div>
+
+                <button id="checkAnswers">Check Answers</button>
+                <p id="score"></p>
+
+            </div>
+        </section>
+
+    <FOOTER>
+        <div class="container text-center">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                <div class="col">
+                    <img src="Signatures/Briones.jpg" class="img-fluid" alt="Briones">
+                </div>
+                <div class="col">
+                    <img src="Signatures/Que.png" class="img-fluid" alt="Que">
+                </div>
+                <div class="col">
+                    <img src="Signatures/Sosa.png" class="img-fluid" alt="Sosa">
+                </div>
+                <div class="col">
+                    <img src="Signatures/Torres.png" class="img-fluid" alt="Torres">
+                </div>
+            </div>
+        </div>
+ 
+        
+        <H4>
+            We (Briones, Que, Sosa, Torres) certify that no AI tools were used in the design, coding, debugging, or writing of this project
+        </H4>
+        
+    </FOOTER>
+
+    <script src="app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+  </body>
+</html>
