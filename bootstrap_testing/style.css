@@ -46,6 +46,21 @@ section {
     padding-top: 20px;
 }
 
+.layerName{
+    background-color:rgb(86, 157, 228);
+    color: black;
+    text-align: center;
+    border: 1px solid black;
+}
+
+
+.layerDefinition{
+    background: rgb(86, 188, 228);
+    color: black;
+    text-align: center;
+    border: 1px solid black;
+}
+
 /* nav {
     float: left;
     width: 30%;
