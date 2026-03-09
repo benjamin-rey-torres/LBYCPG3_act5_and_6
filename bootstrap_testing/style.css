@@ -61,6 +61,11 @@ section {
     border: 1px solid black;
 }
 
+.centeredSection{
+    text-align:  center;
+    
+}
+
 /* nav {
     float: left;
     width: 30%;
