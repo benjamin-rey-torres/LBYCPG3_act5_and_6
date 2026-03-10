@@ -11,13 +11,17 @@
     <BODY>
 
     <HEADER>
-        <H1>
+        <DIV class = "container-fluid"> 
+            <H1>
             COMPUTER NETWORK MODELS
-        </H1>
+            </H1>
 
-        <H3>
-            By Briones, Que, Sosa, & Torres
-        </H3>
+            <H3>
+                By Briones, Que, Sosa, & Torres
+            </H3>
+
+        </DIV>
+        
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Navbar</a>
@@ -45,22 +49,28 @@
     </HEADER>
 
    <section>
+        <DIV class = "container-fluid">
             <article>
                 <p>
                     The <b>Transmission Control Protocol/Internet Protocol, TCP/IP, Model</b> is a practical framework as opposed to OSI's theoretical model. 
                     It was developed by the Defense Advanced Research Projects Agency (DARPA) and consists of 4 layers
                 </p>
             </article>
-        </section>
+        </DIV>
+            
+    </section>
 
-        <section>
+    <section>
+        <DIV class = "container-fluid">
             <figure>
-                <img src="Images/tcpip_model.png" alt="Diagram of the TCPIP Model Layers">
+                <img class = "img-fluid" src="Images/tcpip_model.png" alt="Diagram of the TCPIP Model Layers">
                 <figcaption>Figure 1: The Four Layers of the TCPIP Model</figcaption>
             </figure>
-        </section>
+        </DIV>
+    </section>
 
-        <section>
+    <section>
+        <DIV class = "container-fluid"> 
             <h2>The TCP/IP Model is divided into 4 distinct layers:</h2>
 
             <ul>
@@ -69,10 +79,13 @@
                 <li><b>Internet Layer (Layer 3)</b> – Involved in logical addressing and routing of payloads.</li>
                 <li><b>Network Access Layer (Layer 4)</b> – Facilitates physical movement of data over the network medium.</li>
             </ul>
-        </section>
+        </DIV>
+        
+    </section>
 
-        <!--function checks for the next paragraph element to display when it is normally hidden-->
-        <section>
+    <!--function checks for the next paragraph element to display when it is normally hidden-->
+    <section>
+        <DIV class = "container-fluid">
             <h2 onclick=toggleDisplay(event)>1. Encapsulation and Data Flow ▼</h2>
 
             <p class="toggleable">
@@ -82,10 +95,11 @@
                 data moves from bottom to top. This process ensures organized and reliable communication.
                 <br>
             </p>
+        </DIV>
+    </section>
 
-        </section>
-
-        <section>
+    <section>
+        <DIV class = "container-fluid">
             <h2 onclick=toggleDisplay(event)>2. Protocols and Examples Per Layer ▼</h2>
 
             <p class="toggleable">
@@ -100,8 +114,8 @@
                 The <b>Network Access Layer</b> includes Ethernet and ARP for physical
                 transmission and hardware addressing. 
             </p>
-
-        </section>
+        </DIV>
+    </section>
 
     <FOOTER>
         <div class="container text-center">
@@ -119,12 +133,13 @@
                     <img src="Signatures/Torres.png" class="img-fluid" alt="Torres">
                 </div>
             </div>
-        </div>
+        
  
         
-        <H4>
-            We (Briones, Que, Sosa, Torres) certify that no AI tools were used in the design, coding, debugging, or writing of this project
-        </H4>
+            <H4>
+                We (Briones, Que, Sosa, Torres) certify that no AI tools were used in the design, coding, debugging, or writing of this project
+            </H4>
+        </div>
         
     </FOOTER>
 
