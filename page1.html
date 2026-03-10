@@ -1,20 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>OSI Model - HTML5 Page</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-<body>
+    <BODY>
 
-    <header>
-        <h1>OSI Model</h1>
-    </header>
+    <HEADER>
+        <DIV class = "container-fluid">
+            <H1>
+                COMPUTER NETWORK MODELS
+            </H1>
 
-    <main>
+            <H3>
+                By Briones, Que, Sosa, & Torres
+            </H3>
+        </DIV>
+        
 
-        <section>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <DIV class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <DIV class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="page1.html">Page 1</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="page2.html">Page 2</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="page3.html">Page 3</a>
+                    </li>
+                </ul>
+                </DIV>
+            </DIV>
+        </nav>
+    </HEADER>
+
+    <section>
+        <DIV class = "container-fluid">
             <article>
                 <p>
                     The <b>OSI (Open Systems Interconnection) Model</b> 
@@ -24,82 +59,121 @@
                     of seven layers, each with specific tasks and responsibilities.
                 </p>
             </article>
-        </section>
+        </DIV>     
+    </section>
 
-        <section>
+    <section>
+        <DIV class = "container-fluid">
             <figure>
-                <img src="Images/osi_model.png" alt="Diagram of the OSI Model Layers">
+                <img class="img-fluid" src="Images/osi_model.png" alt="Diagram of the OSI Model Layers">
                 <figcaption>Figure 1: The Seven Layers of the OSI Model</figcaption>
-            </figure>
-        </section>
+            </figure>    
+        </DIV>       
+    </section>
 
-        <section>
+    <section>
+        <DIV class="container-fluid">
+
             <h2>The 7 Layers of the OSI Model</h2>
+            <DIV class="row">
+                
+                <DIV class="col-4 layerName">Application Layer (Layer 7)</DIV>     <DIV class="col-8 layerDefinition">Creates the data to be transferred.</DIV>
+                <DIV class="col-4 layerName">Presentation Layer (Layer 6)</DIV>    <DIV class="col-8 layerDefinition";>Formats, encrypts, and compresses data.</DIV>
+                <DIV class="col-4 layerName">Session Layer (Layer 5)</DIV>         <DIV class="col-8 layerDefinition";>Establishes, manages, and terminates connections.</DIV>
+                <DIV class="col-4 layerName">Transport Layer (Layer 4)</DIV>       <DIV class="col-8 layerDefinition";>Breaks data into segments for reliable delivery.</DIV>
+                <DIV class="col-4 layerName">Network Layer (Layer 3)</DIV>         <DIV class="col-8 layerDefinition";>Breaks segments into packets and handles routing.</DIV>
+                <DIV class="col-4 layerName">Data Link Layer (Layer 2)</DIV>       <DIV class="col-8 layerDefinition";>Converts packets into frames for transmission.</DIV>
+                <DIV class="col-4 layerName">Physical Layer (Layer 1)</DIV>        <DIV class="col-8 layerDefinition";>Transmits raw bits through physical media.</DIV>
+            </DIV>
+        </DIV>
+        
+    </section>
 
-            <ul>
-                <li><b>Application Layer (Layer 7)</b> – Creates the data to be transferred.</li>
-                <li><b>Presentation Layer (Layer 6)</b> – Formats, encrypts, and compresses data.</li>
-                <li><b>Session Layer (Layer 5)</b> – Establishes, manages, and terminates connections.</li>
-                <li><b>Transport Layer (Layer 4)</b> – Breaks data into segments for reliable delivery.</li>
-                <li><b>Network Layer (Layer 3)</b> – Breaks segments into packets and handles routing.</li>
-                <li><b>Data Link Layer (Layer 2)</b> – Converts packets into frames for transmission.</li>
-                <li><b>Physical Layer (Layer 1)</b> – Transmits raw bits through physical media.</li>
-            </ul>
-        </section>
+    
 
-        <!--function checks for the next paragraph element to display when it is normally hidden-->
-        <section>
-            <h2 onclick=toggleDisplay(event)>1. Encapsulation and Data Flow ▼</h2>
+    <!--function checks for the next paragraph element to display when it is normally hidden-->
+    <section>
+    <DIV class="container-fluid centeredSection">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        1. Encapsulation and Data Flow
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        The OSI layers are numbered from bottom to top, with the Physical Layer as Layer 1 and the Application Layer as Layer 7.
+                        <br>
+                        When data is sent, it starts at the Application Layer and travels downward through the layers. At each layer, additional information (headers) is added — a process known as <b>encapsulation</b>.
+                        These headers help identify the destination and manage communication.
+                        <br>
+                        When the data reaches the receiving device, the process is reversed. The data moves upward through the layers, and each layer removes its corresponding header — a process called <b>decapsulation</b>.
+                        <br>
+                        Each layer acts as a checkpoint in the communication process. No layer can be skipped, and a failure in any layer may cause communication issues.
+                    </div>
+                </div>
+            </div>
 
-            <p class="toggleable">
-                The OSI layers are numbered from bottom to top, with the Physical Layer 
-                as Layer 1 and the Application Layer as Layer 7.
-                <br>
-                When data is sent, it starts at the Application Layer and travels 
-                downward through the layers. At each layer, additional information 
-                (headers) is added — a process known as <b>encapsulation</b>. 
-                These headers help identify the destination and manage communication.
-                <br>
-                When the data reaches the receiving device, the process is reversed. 
-                The data moves upward through the layers, and each layer removes its 
-                corresponding header — a process called <b>decapsulation</b>.
-                <br>
-                Each layer acts as a checkpoint in the communication process. No layer 
-                can be skipped, and a failure in any layer may cause communication issues.
-            </p>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        2. Protocols and Examples Per Layer
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        The OSI Model uses different protocols at each layer to ensure proper communication between devices.
+                        <br>
+                        The <b>Application Layer</b> uses protocols such as HTTP, FTP, SMTP, and DNS, which are used for web browsing, file transfer, and email services.
+                        <br>
+                        The <b>Presentation Layer</b> handles encryption and formatting through SSL/TLS and data formats like JPEG or MPEG.
+                        <br>
+                        The <b>Session Layer</b> manages connections using protocols like NetBIOS and RPC.
+                        <br>
+                        The <b>Transport Layer</b> ensures delivery through TCP (reliable) and UDP (faster but connectionless).
+                        <br>
+                        The <b>Network Layer</b> routes data using IP and ICMP.
+                        <br>
+                        The <b>Data Link Layer</b> manages physical addressing through Ethernet and ARP.
+                        <br>
+                        The <b>Physical Layer</b> transmits raw data using cables, fiber optics, or wireless signals.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </DIV>
+    </section>
 
-        </section>
+    <FOOTER>
+        <div class="container text-center">
+            <div class="signature">
+                <div class="col">
+                    <img src="Signatures/Briones.jpg" class="signature" alt="Briones">
+                </div>
+                <div class="col">
+                    <img src="Signatures/Que.png" class="signature" alt="Que">
+                </div>
+                <div class="col">
+                    <img src="Signatures/Sosa.png" class="signature" alt="Sosa">
+                </div>
+                <div class="col">
+                    <img src="Signatures/Torres.png" class="signature" alt="Torres">
+                </div>
+            </div>
+        </div>
+ 
+        
+        <H4 class="px-2">
+            <em>We (Briones, Que, Sosa, Torres) certify that no AI tools were used in the design, coding, debugging, or writing of this project.</em>
+        </H4>
+        
+    </FOOTER>
 
-        <section>
-            <h2 onclick=toggleDisplay(event)>2. Protocols and Examples Per Layer ▼</h2>
-
-            <p class="toggleable">
-                The OSI Model uses different protocols at each layer to ensure proper
-                communication between devices.
-                <br>
-                The <b>Application Layer</b> uses protocols such as HTTP, FTP, SMTP and DNS 
-                which is used for web browsing, file transfer, and email services.
-                <br>
-                The <b>Presentation Layer</b> handles the encryption and formatting through
-                SSL/TLS and data formats like JPEG or MPEG.
-                <br>
-                The <b>Session Layer</b> manages connections using protocols like NetBIOS and 
-                RPC.
-                <br>
-                The <b>Transport Layer</b> ensures delivery through TCP (reliable) and 
-                UDP (faster but connectionless). 
-                <br>
-                The <b>Network Layer</b> routes data using IP and ICMP.
-                <br>
-                The <b>Data Link Layer</b> manages physical addressing through Ethernet and ARP.
-                <br>
-                The <b>Physical Layer</b> transmit raw data using cables, fiber optics, or 
-                wireless signals.
-            </p>
-
-        </section>
-
-    </main>
     <script src="app.js"></script>
-</body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+</BODY>
 </html>

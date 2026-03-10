@@ -1,11 +1,14 @@
-<!DOCTYPE HTML>
-<HTML LANG="en">
-<HEAD>
-<LINK rel="stylesheet" href="style.css">
-<TITLE>Lab 3 and 4</TITLE>
-</HEAD>
-
-<BODY>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <BODY>
 
     <HEADER>
         <H1>
@@ -15,47 +18,167 @@
         <H3>
             By Briones, Que, Sosa, & Torres
         </H3>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="page1.html">Page 1</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="page2.html">Page 2</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="page3.html">Page 3</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
     </HEADER>
 
-
     <SECTION>
+        <H1 class="px-3">
+                There are two common network models to represent the flow of data Communication: The OSI Model and the TCP/IP MODEL  
+            </H1>
+
+            <IMG SRC = "Images/both_models.png" class="img-fluid d-none d-md-block">
+
+            <div id="carouselExample" class="carousel slide d-block d-md-none">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="Images/osi_simple.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="Images/tcp_simple.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev icon-black" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon icon-black" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <H2 class="px-4">
+                The above table shows how the layers of both models relate to each other. A summary of how each model may differ is given below.
+            </H2>
+
+            <TABLE>
+                <TR>
+                    <TH>OSI MODEL</TH>
+                    <TH>TCP/IP MODEL</TH>
+                </TR>
+                <TR>
+                    <TD>7 Layers</TD>
+                    <TD>4 Layers</TD>
+                </TR>
+                <TR>
+                    <TD>No specified protocols used</TD>
+                    <TD>Uses specified protocols such as TCP, UDP, IP, etc.</TD>
+                </TR>
+                <TR>
+                    <TD>Developed by ISO for standardization, more theoretical</TD>
+                    <TD>Developed by DoD for Internet use, more practical</TD>
+                </TR>
+                <TR>
+                    <TD>Has a separate presentation and session layer</TD>
+                    <TD>Does not have a separate presentation and separate layer</TD>
+                </TR>
+            </TABLE>    
         
-        <NAV>
-            <B><P><A HREF = "home.html" TARGET = "content">HOME</A></P>
+        <!-- Interactive packet visualization part -->
+        <MAIN> 
+            <section id="visualizationSection">
+                <h2>
+                    Network Data Flow Visualization
+                </h2>
+                
+                <!-- Controls for Visualizer -->
+                <div id="visualizationControls">
+                    <!-- Select model (OSI or TCP/IP) -->
+                    <div class="model-toggle">
+                        <button class="btn btn-active" id="btn-osi" onclick="setModel('osi')">OSI (7-Layer)</button>
+                        <button class="btn" id="btn-tcpip" onclick="setModel('tcpip')">TCP/IP (4-Layer)</button>
+                    </div>
 
-            <B><P><A HREF = "page1.html" TARGET = "content">OSI MODEL</A></P>
+                    <!-- Select mode (Auto/Manual) -->
+                    <div class="mode-toggle">
+                        <button class="btn btn-active" id="btn-manual" onclick="setMode('manual')">Manual</button>
+                        <button class="btn" id="btn-auto" onclick="setMode('auto')">Auto</button>
+                    </div>
 
-            <B><P><A HREF = "page2.html" TARGET = "content">TCP/IP MODEL</A></P>  
+                    <!-- Playback options -->
+                    <button class="btn" id="playBtn" onclick="playVisualization()">Play</button>
+                    <button class="btn" id="pauseBtn" onclick="pauseVisualization()" disabled>Pause</button>
+                    <button class="btn" id="resetBtn" onclick="resetVisualization()">Reset</button>
+                </div>
 
-            <B><P><A HREF = "page3.html" TARGET = "content">QUIZ</A></P>  
-        </NAV>
+                <!-- Displays the layers of the specified model -->
+                <div id="hosts">
+                    <div class="host" id="sender"></div>
+                    <div id="channel">
+                        <div id="wire">
+                            <div id="packet"></div>
+                        </div>
+                        <div id="wireLabel">MEDIUM</div>
+                    </div>
+                    <div class="host" id="receiver"></div>
+                </div>
 
-        
-        <IFRAME SRC = "home.html" NAME = "content">
-        </IFRAME>
+                <!-- While on manual mode, the explanation section is updated for what the current layer does -->
+                <div id="explanation">
+                    <span class="explanation-label">Step Explanation</span>
+                    <span id="explanationText">Lorem ipsum.</span>
+                </div>
 
+                <!-- A button to go to the next step (only visible when set to Manual) -->
+                <button id="nxtBtn" onclick="manualStep()">Next Step</button>
+                <div id="completeVisualization">Transmission complete. Data successfully sent from Host A to Host B</div>
+            </section>
+        </MAIN>
+        <script src="app.js"></script>
     </SECTION>
 
-
     <FOOTER>
-        <div class = "signature">
-            <image src="Signatures/Briones.jpg" alt="Briones" width="100" height="100">
-            <image src="Signatures/Que.png" alt="Que" width="100" height="100"> 
-            <image src="Signatures/Sosa.png" alt="Sosa" width="100" height="100">
-            <image src="Signatures/Torres.png" alt="Torres" width="100" height="100">
+        <div class="container text-center">
+            <div class="signature">
+                <div class="col">
+                    <img src="Signatures/Briones.jpg" class="signature" alt="Briones">
+                </div>
+                <div class="col">
+                    <img src="Signatures/Que.png" class="signature" alt="Que">
+                </div>
+                <div class="col">
+                    <img src="Signatures/Sosa.png" class="signature" alt="Sosa">
+                </div>
+                <div class="col">
+                    <img src="Signatures/Torres.png" class="signature" alt="Torres">
+                </div>
+            </div>
         </div>
+ 
         
-        <H4>
-            We (Briones, Que, Sosa, Torres) certify that no AI tools were used in the design, coding, debugging, or writing of this project
+        <H4 class="px-2">
+            <em>We (Briones, Que, Sosa, Torres) certify that no AI tools were used in the design, coding, debugging, or writing of this project.</em>
         </H4>
-
-        <!--use of javascript function to toggles CSS style values-->
-        <button id="darkmode" onclick="switchcolors()">
-             <image src="Images/darkmodeimage.png" alt="dark mode" width="40" class="altimg"></image>
-        </button>
+        
     </FOOTER>
 
     <script src="app.js"></script>
 
-</BODY>
-</HTML>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+  </body>
+</html>
