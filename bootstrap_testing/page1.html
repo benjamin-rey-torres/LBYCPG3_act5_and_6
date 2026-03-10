@@ -93,59 +93,57 @@
 
     <!--function checks for the next paragraph element to display when it is normally hidden-->
     <section>
-        <DIV class = "container-fluid centeredSection">
-            <h2 onclick=toggleDisplay(event)>1. Encapsulation and Data Flow ▼</h2>
+    <DIV class="container-fluid centeredSection">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        1. Encapsulation and Data Flow
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        The OSI layers are numbered from bottom to top, with the Physical Layer as Layer 1 and the Application Layer as Layer 7.
+                        <br>
+                        When data is sent, it starts at the Application Layer and travels downward through the layers. At each layer, additional information (headers) is added — a process known as <b>encapsulation</b>.
+                        These headers help identify the destination and manage communication.
+                        <br>
+                        When the data reaches the receiving device, the process is reversed. The data moves upward through the layers, and each layer removes its corresponding header — a process called <b>decapsulation</b>.
+                        <br>
+                        Each layer acts as a checkpoint in the communication process. No layer can be skipped, and a failure in any layer may cause communication issues.
+                    </div>
+                </div>
+            </div>
 
-            <p class="toggleable">
-                The OSI layers are numbered from bottom to top, with the Physical Layer 
-                as Layer 1 and the Application Layer as Layer 7.
-                <br>
-                When data is sent, it starts at the Application Layer and travels 
-                downward through the layers. At each layer, additional information 
-                (headers) is added — a process known as <b>encapsulation</b>. 
-                These headers help identify the destination and manage communication.
-                <br>
-                When the data reaches the receiving device, the process is reversed. 
-                The data moves upward through the layers, and each layer removes its 
-                corresponding header — a process called <b>decapsulation</b>.
-                <br>
-                Each layer acts as a checkpoint in the communication process. No layer 
-                can be skipped, and a failure in any layer may cause communication issues.
-            </p>
-        </DIV>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        2. Protocols and Examples Per Layer
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        The OSI Model uses different protocols at each layer to ensure proper communication between devices.
+                        <br>
+                        The <b>Application Layer</b> uses protocols such as HTTP, FTP, SMTP, and DNS, which are used for web browsing, file transfer, and email services.
+                        <br>
+                        The <b>Presentation Layer</b> handles encryption and formatting through SSL/TLS and data formats like JPEG or MPEG.
+                        <br>
+                        The <b>Session Layer</b> manages connections using protocols like NetBIOS and RPC.
+                        <br>
+                        The <b>Transport Layer</b> ensures delivery through TCP (reliable) and UDP (faster but connectionless).
+                        <br>
+                        The <b>Network Layer</b> routes data using IP and ICMP.
+                        <br>
+                        The <b>Data Link Layer</b> manages physical addressing through Ethernet and ARP.
+                        <br>
+                        The <b>Physical Layer</b> transmits raw data using cables, fiber optics, or wireless signals.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </DIV>
     </section>
-
-    <section>
-        <DIV class = "container-fluid centeredSection">
-            <h2 onclick=toggleDisplay(event)>2. Protocols and Examples Per Layer ▼</h2>
-
-            <p class="toggleable">
-                The OSI Model uses different protocols at each layer to ensure proper
-                communication between devices.
-                <br>
-                The <b>Application Layer</b> uses protocols such as HTTP, FTP, SMTP and DNS 
-                which is used for web browsing, file transfer, and email services.
-                <br>
-                The <b>Presentation Layer</b> handles the encryption and formatting through
-                SSL/TLS and data formats like JPEG or MPEG.
-                <br>
-                The <b>Session Layer</b> manages connections using protocols like NetBIOS and 
-                RPC.
-                <br>
-                The <b>Transport Layer</b> ensures delivery through TCP (reliable) and 
-                UDP (faster but connectionless). 
-                <br>
-                The <b>Network Layer</b> routes data using IP and ICMP.
-                <br>
-                The <b>Data Link Layer</b> manages physical addressing through Ethernet and ARP.
-                <br>
-                The <b>Physical Layer</b> transmit raw data using cables, fiber optics, or 
-                wireless signals.
-            </p>
-        </DIV>
-    </section>
-
-    
 
     <FOOTER>
         <div class="container text-center">

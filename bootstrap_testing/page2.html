@@ -85,35 +85,47 @@
 
     <!--function checks for the next paragraph element to display when it is normally hidden-->
     <section>
-        <DIV class = "container-fluid">
-            <h2 onclick=toggleDisplay(event)>1. Encapsulation and Data Flow ▼</h2>
+        <DIV class="container-fluid centeredSection">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            1. Encapsulation and Data Flow
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            The TCP/IP has 4 layers which are traversed by data as it is processed.
+                            Data typically moves from the Application Layer down to the Network Access layer,
+                            where headers are appended for transmission. The receiver removes these headers as the
+                            data moves from bottom to top. This process ensures organized and reliable communication.
+                            <br>
+                        </div>
+                    </div>
+                </div>
 
-            <p class="toggleable">
-                The TCP/IP has 4 layers which are traversed by data as it is processed. 
-                Data typically moves from the Application Layer down to the Network Access layer, 
-                where headers are appended for transmission. The receiver removes these headers as the 
-                data moves from bottom to top. This process ensures organized and reliable communication.
-                <br>
-            </p>
-        </DIV>
-    </section>
-
-    <section>
-        <DIV class = "container-fluid">
-            <h2 onclick=toggleDisplay(event)>2. Protocols and Examples Per Layer ▼</h2>
-
-            <p class="toggleable">
-                Each TCP/IP layer uses specific protocol
-                <br>
-                The <b>Application Layer</b> includes HTTP, FTP, SMTP and DNS
-                <br>
-                The <b>Transport Layer</b> uses TCP and UDP to manage data delivery.
-                <br>
-                The <b>Internet Layer</b> uses IP and ICMP for addressing and routing.
-                <br>
-                The <b>Network Access Layer</b> includes Ethernet and ARP for physical
-                transmission and hardware addressing. 
-            </p>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            2. Protocols and Examples Per Layer
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Each TCP/IP layer uses specific protocol
+                            <br>
+                            The <b>Application Layer</b> includes HTTP, FTP, SMTP, and DNS
+                            <br>
+                            The <b>Transport Layer</b> uses TCP and UDP to manage data delivery.
+                            <br>
+                            The <b>Internet Layer</b> uses IP and ICMP for addressing and routing.
+                            <br>
+                            The <b>Network Access Layer</b> includes Ethernet and ARP for physical
+                            transmission and hardware addressing.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </DIV>
     </section>
 
