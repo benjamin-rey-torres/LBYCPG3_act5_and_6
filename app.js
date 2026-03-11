@@ -1,5 +1,8 @@
+/* app.js */
+
 document.addEventListener("DOMContentLoaded", function () {
 
+    // Quiz Section
     const startBtn = document.getElementById("startQuizBtn");
     const quizArea = document.getElementById("quizArea");
     const scoreDisplay = document.getElementById("score");
@@ -11,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Drag and Drop
     document.querySelectorAll(".drag-layer, .drag-def").forEach(item => {
         item.addEventListener("dragstart", function (e) {
             e.dataTransfer.setData("text/plain", this.id);
@@ -33,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Check Answers
     const checkAnswers = document.getElementById("checkAnswers");
     if (checkAnswers) {
         checkAnswers.addEventListener("click", function () {
@@ -67,10 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-/* 
-home.html interactive packet visualization part 
-*/
-
+/* Packet Visualizer */
 function tag(cls, text) { return `<span class="header-tag ${cls}">${text}</span>`; }
 
 const MODELS = {
@@ -295,9 +297,7 @@ function clearAutoTimer() {
     }
 }
 
-/* 
-header requires this function and will be able to toggle display of paragrph text if toggleable class is given
-*/
+/* Toggle Display */
 function toggleDisplay(event) {
     var clickedHeading = event.target;
     var paragraph = clickedHeading.nextElementSibling;
