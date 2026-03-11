@@ -1,5 +1,8 @@
+/* Base/Reset */
+*, *::before, *::after { box-sizing: border-box; }
+
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     font-size: 16px;
     background-color: #eaf4f8; /* very light blue */
     color: dimgray;
@@ -7,10 +10,12 @@ body {
     padding: 0;
 }
 
+/* Header */
 header {
     padding-top: 20px;
 }
 
+/* Text Styles */
 h1 {
     text-align: center;
     color: #0b3c7d;
@@ -24,6 +29,7 @@ h2 {
     text-align: center;
     color: #333;
     margin-top: 25px;
+    font-size: clamp(0.95rem, 3vw, 1.5rem);
 }
 
 h3 {
@@ -31,6 +37,7 @@ h3 {
     color: darkgray;
     font-weight: normal;
     margin-top: 10px;
+    font-size: clamp(0.85rem, 2.5vw, 1.2rem);
 }
 
 h4 {
@@ -40,12 +47,18 @@ h4 {
     margin-top: 10px;
 }
 
+/* Sections */
 section {
     width: 100%;
     overflow: hidden;
     padding-top: 20px;
 }
 
+.centeredSection{
+    text-align:  center;
+}
+
+/* Layers */
 .layerName{
     background-color:rgb(86, 157, 228);
     color: black;
@@ -61,34 +74,25 @@ section {
     border: 1px solid black;
 }
 
-.centeredSection{
-    text-align:  center;
-    
-}
+/* Navbar */
+.navbar { border-bottom: 2px solid #0b3c7d; }
 
-/* nav {
-    float: left;
-    width: 30%;
-    padding: 20px;
-}
-
-nav p {
-    margin: 20px 0;
-    text-align: center;
-}
-
-nav a {
-    display: block;
-    padding: 24px;
-    margin: 8px auto;
-    background-color: #e1ecf4;
-    border: 1px solid #0b3c7d;
-    color: #0b3c7d;
-    text-decoration: none;
+.navbar-brand {
     font-weight: bold;
-    width: 80%;
-    letter-spacing: 0.5px;
-} */
+    color: #0b3c7d !important;
+}
+
+.nav-link {
+    color: #0b3c7d !important;
+    font-weight: bold;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    background-color: #0b3c7d !important;
+    color: white !important;
+    border-radius: 4px;
+}
 
 iframe {
     float: left;
@@ -113,34 +117,46 @@ figcaption {
 img {
     display: block;
     margin: 20px auto;
-    max-width: 85%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
     background-color: white;
     padding: 12px;
     border: 2px solid #c5d1e0;
 }
 
+/* Hero/diagram images constrained on desktop, full on mobile */
+.hero-img {
+    max-width: 85%;
+    width: auto;
+}
+
+@media (max-width: 767.98px) {
+    .hero-img { max-width: 100%; padding: 6px; }
+}
+
 .altimg {
     display: block;
-    margin: 0px;
-    max-width: 85%;
+    margin: 0 auto;
+    max-width: 100%;
     background-color: white;
-    padding: 0px;
-    border: 0px solid #c5d1e0;
+    padding: 0;
+    border: none;
 }
 
-/* ul {
-    margin: 20px 60px;
-    padding: 20px 30px 20px 50px;
-    background-color: white;
-    border-left: 6px solid #0b3c7d;
-    border-radius: 4px;
-    list-style-position: outside;
+figcaption {
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 0.9rem;
 }
 
-li {
-    margin-bottom: 10px;
-    padding: 6px 0;
-} */
+/* Tables */
+.table-responsive-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
 
 table {
     width: 85%;
@@ -160,6 +176,11 @@ td {
     padding: 10px;
     border: 1px solid black;
     text-align: center;
+}
+
+@media (max-width: 767.98px) {
+    table { width: 100%; }
+    th, td { padding: 6px; font-size: 0.78rem; }
 }
 
 #quizSection {
@@ -231,19 +252,18 @@ footer {
     padding: 20px 0;
 }
 
-.signature {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #0b3c7d;
-    padding: 10px 0;
-}
-
-.signature img {
-    max-height: 60px;
+footer img {
+    max-height: 80px;
+    width: auto;
     object-fit: contain;
     background-color: white;
     padding: 5px;
+    border: none;
+    margin: 8px auto;
+}
+
+@media (max-width: 767.98px) {
+    footer img { max-height: 55px; }
 }
 
 * {
@@ -275,12 +295,14 @@ footer {
   color: #eaf4f8; 
 }
 
+/* Packet Visualizer */
 #visualizationSection {
     background: white;
     border: 2px solid #0b3c7d;
     padding: 20px 25px;
     margin: 30px auto;
-    width: 85%;
+    width: 90%;
+    max-width: 900px;
 }
 
 #visualizationSection h2 {
@@ -288,7 +310,7 @@ footer {
     border-bottom: 2px solid #0b3c7d;
     padding-bottom: 8px;
     margin-bottom: 16px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     text-align: left;
     text-transform: uppercase;
 }
@@ -296,6 +318,7 @@ footer {
 #visualizationControls {
     display: flex;
     flex-wrap: wrap;
+    gap: 8px;
     margin-bottom: 20px;
     align-items: center;
 }
@@ -309,6 +332,7 @@ footer {
     font-weight: bold;
     font-family: Arial;
     transition: background 0.15s;
+    font-size: 0.85rem;
 }
 
 .btn:hover { background: #c5d1e0; }
@@ -359,10 +383,10 @@ footer {
     padding: 6px 10px;
     border: 1px solid #c5d1e0;
     background: #eaf4f8;
-    min-height: 36px;
     transition: background 0.2s, border-color 0.2s;
     min-height: 38px;
     gap: 8px;
+    font-size: clamp(0.68rem, 1.8vw, 0.9rem);
 }
 
 .layer-row.active-layer {
@@ -389,6 +413,7 @@ footer {
     padding: 2px 6px;
     font-weight: bold;
     margin-right: 2px;
+    font-size: clamp(0.58rem, 1.5vw, 0.8rem);
 }
 
 .tag-mac  { background: #f0eafa; color: #4a235a; border-color: #9b59b6; }
@@ -396,7 +421,7 @@ footer {
 .tag-tcp  { background: #eaf4f8; color: #0b3c7d; border-color: #0b3c7d; }
 .tag-data { background: #fef9e7; color: #7d6608; border-color: #f1c40f; }
 .tag-fcs  { background: #fdedec; color: #7b241c; border-color: #e74c3c; }
-.tag-bin  { background: #f2f3f4; color: #626567; border-color: #aab7b8; font-size: 0.65rem; }
+.tag-bin  { background: #f2f3f4; color: #626567; border-color: #aab7b8; font-size: 0.6rem; }
 
 #channel {
     display: flex;
@@ -480,6 +505,14 @@ footer {
     color: #1a5c2e;
     font-size: 0.9rem;
     font-weight: bold;
+}
+
+@media (max-width: 767.98px) {
+    #visualizationSection { width: 95%; padding: 12px; }
+    #hosts { grid-template-columns: 1fr 30px 1fr; }
+    #wire { min-height: 180px; }
+    .layer-row { padding: 3px 5px; gap: 4px; }
+    .btn { font-size: 0.75rem; padding: 4px 8px; }
 }
 
 .carousel-control-prev-icon { 
